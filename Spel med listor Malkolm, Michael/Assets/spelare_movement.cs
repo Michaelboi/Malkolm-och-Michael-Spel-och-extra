@@ -1,4 +1,4 @@
-
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +18,7 @@ namespace spel_move
         // inputs för att spelaren ska kunna röra sig
         public void movement()
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 RB.velocity = new Vector3(0, 5f, 0);
             }
@@ -26,7 +26,7 @@ namespace spel_move
             {
                 RB.velocity = new Vector3(0, 0, 0);
             }
-            if (Input.GetKey("up"))
+            if (Input.GetKeyDown("up"))
             {
                 RB.velocity = new Vector3(0, 0, 5f);
             }
@@ -34,7 +34,7 @@ namespace spel_move
             {
                 RB.velocity = new Vector3(0, 0, 0);
             }
-            if (Input.GetKey("right"))
+            if (Input.GetKeyDown("right"))
             {
                 RB.velocity = new Vector3(5f, 0, 0);
             }
@@ -42,7 +42,7 @@ namespace spel_move
             {
                 RB.velocity = new Vector3(0, 0, 0);
             }
-            if (Input.GetKey("down"))
+            if (Input.GetKeyDown("down"))
             {
                 RB.velocity = new Vector3(0, 0, -5f);
             }
@@ -50,7 +50,7 @@ namespace spel_move
             {
                 RB.velocity = new Vector3(0, 0, 0);
             }
-            if (Input.GetKey("left"))
+            if (Input.GetKeyDown("left"))
             {
                 RB.velocity = new Vector3(-5f, 0, 0);
             }

@@ -10,8 +10,11 @@ public class spelare : MonoBehaviour
     spelare_movement move;
 
     // Start is called before the first frame update
+    
     void Start()
     {
+        
+        move.GetComponent<spelare_movement>();
         current_pos = GetComponent<spelare_spawns>();
         current_pos.position();
         move.kub_movement();
