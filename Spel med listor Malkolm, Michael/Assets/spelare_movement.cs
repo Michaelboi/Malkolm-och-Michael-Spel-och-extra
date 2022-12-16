@@ -18,45 +18,46 @@ namespace spel_move
         // inputs för att spelaren ska kunna röra sig
         public void movement()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            
+            if (Input.GetKey(KeyCode.Space))
             {
-                RB.velocity = new Vector3(0, 5, 0);
+                RB.AddForce(0, 5, 0);
             }
             if (Input.GetKeyUp("space"))
             {
-                RB.velocity = new Vector3(0, 0, 0);
+                RB.AddForce(0, 0, 0);
             }
-            if (Input.GetKeyDown("up"))
+            if (Input.GetKey("up"))
             {
-                RB.velocity = new Vector3(0, 0, 5);
+                RB.AddForce(0, 0, 5);
             }
             if (Input.GetKeyUp("up"))
             {
-                RB.velocity = new Vector3(0, 0, 0);
+                RB.AddForce(0, 0, 0);
             }
-            if (Input.GetKeyDown("right"))
+            if (Input.GetKey("right"))
             {
-                RB.velocity = new Vector3(5, 0, 0);
+                RB.AddForce(5, 0, 0);
             }
             if (Input.GetKeyUp("right"))
             {
-                RB.velocity = new Vector3(0, 0, 0);
+                RB.AddForce(0, 0, 0);
             }
-            if (Input.GetKeyDown("down"))
+            if (Input.GetKey("down"))
             {
-                RB.velocity = new Vector3(0, 0, -5);
+                RB.AddForce(0, 0, -5);
             }
             if (Input.GetKeyUp("down"))
             {
-                RB.velocity = new Vector3(0, 0, 0);
+                RB.AddForce(0, 0, 0);
             }
-            if (Input.GetKeyDown("left"))
+            if (Input.GetKey("left"))
             {
-                RB.velocity = new Vector3(-5, 0, 0);
+                RB.AddForce(-5, 0, 0);
             }
             if (Input.GetKeyUp("left"))
             {
-                RB.velocity = new Vector3(0, 0, 0);
+                RB.AddForce(0, 0, 0);
             }
         }
     }
