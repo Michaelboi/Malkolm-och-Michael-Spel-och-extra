@@ -12,7 +12,7 @@ namespace spel_move
         public void kub_movement()
         {
             RB = GetComponent<Rigidbody>();
-
+            
         }
 
         // inputs för att spelaren ska kunna röra sig
@@ -20,7 +20,7 @@ namespace spel_move
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                RB.velocity = new Vector3(0, 5f, 0);
+                RB.velocity = new Vector3(0, 5, 0);
             }
             if (Input.GetKeyUp("space"))
             {
@@ -28,7 +28,7 @@ namespace spel_move
             }
             if (Input.GetKeyDown("up"))
             {
-                RB.velocity = new Vector3(0, 0, 5f);
+                RB.velocity = new Vector3(0, 0, 5);
             }
             if (Input.GetKeyUp("up"))
             {
@@ -36,7 +36,7 @@ namespace spel_move
             }
             if (Input.GetKeyDown("right"))
             {
-                RB.velocity = new Vector3(5f, 0, 0);
+                RB.velocity = new Vector3(5, 0, 0);
             }
             if (Input.GetKeyUp("right"))
             {
@@ -44,7 +44,7 @@ namespace spel_move
             }
             if (Input.GetKeyDown("down"))
             {
-                RB.velocity = new Vector3(0, 0, -5f);
+                RB.velocity = new Vector3(0, 0, -5);
             }
             if (Input.GetKeyUp("down"))
             {
@@ -52,7 +52,7 @@ namespace spel_move
             }
             if (Input.GetKeyDown("left"))
             {
-                RB.velocity = new Vector3(-5f, 0, 0);
+                RB.velocity = new Vector3(-5, 0, 0);
             }
             if (Input.GetKeyUp("left"))
             {

@@ -13,18 +13,19 @@ public class spelare : MonoBehaviour
     
     void Start()
     {
-        
-        move.GetComponent<spelare_movement>();
+        // Här används GetComponent för att variabeln från klassen ska fungera
+        move = GetComponent<spelare_movement>();
         current_pos = GetComponent<spelare_spawns>();
         current_pos.position();
         move.kub_movement();
-        
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         move.movement();
     }
 }
