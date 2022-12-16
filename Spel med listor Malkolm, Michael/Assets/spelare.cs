@@ -13,7 +13,7 @@ public class spelare : MonoBehaviour
     
     void Start()
     {
-
+        // Här används GetComponent för att variabeln från klassen ska fungera
         move = GetComponent<spelare_movement>();
         current_pos = GetComponent<spelare_spawns>();
         current_pos.position();
