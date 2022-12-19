@@ -25,7 +25,10 @@ public class spelare : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         move.movement();
+    }
+    void FixedUpdate()
+    {
+            
     }
 }
