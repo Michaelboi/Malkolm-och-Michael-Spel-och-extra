@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using spawnpositions;
 using spel_move;
+using bil;
 
 public class spelare : MonoBehaviour
 {
     spelare_spawns current_pos;
     spelare_movement move;
+    bil_mechanics bil_move;
 
     // Start is called before the first frame update
     
@@ -26,9 +28,10 @@ public class spelare : MonoBehaviour
     void Update()
     {
         move.movement();
+        
     }
     void FixedUpdate()
     {
-            
+        bil_move.bil_movement();
     }
 }
