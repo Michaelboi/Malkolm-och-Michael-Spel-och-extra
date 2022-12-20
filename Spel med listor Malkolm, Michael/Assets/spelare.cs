@@ -18,6 +18,7 @@ public class spelare : MonoBehaviour
         // Här används GetComponent för att variabeln från klassen ska fungera
         move = GetComponent<spelare_movement>();
         current_pos = GetComponent<spelare_spawns>();
+        bil_move = GetComponent<bil_mechanics>();
         current_pos.position();
         move.kub_movement();
 

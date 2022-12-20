@@ -35,6 +35,7 @@ namespace bil
         // funktion som sätter  olika inputs
         public void bil_movement()
         {
+            
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
             BilBromms = Input.GetKey(KeyCode.LeftShift);
@@ -44,7 +45,7 @@ namespace bil
 
         }
         // används för att ta bilens hjul ska kunna köra. Den sätter också vissa specifika hjul som primära som då kör/rullar.
-        void Bil_motor()
+        private void Bil_motor()
         {
             framH_hjulCollide.motorTorque = horizontalInput * hjul_Force;
             framV_hjulCollide.motorTorque = horizontalInput * hjul_Force;
@@ -55,7 +56,7 @@ namespace bil
             }
         }
         // sätter igång brommsen och saktar ner bilen genom att få hjulen att stanna
-        void LäggBromms()
+        private void LäggBromms()
         {
             framH_hjulCollide.brakeTorque = current_brommsForce;
             framV_hjulCollide.brakeTorque = current_brommsForce;
@@ -63,7 +64,7 @@ namespace bil
             bakV_hjulCollide.brakeTorque = current_brommsForce;
         }
         // Används för att styra bilen samt sätta en gräns för hur mycket den kan styra åt höger och vänster
-        void bil_styrhjul()
+        private void bil_styrhjul()
         {
             styrAngle = maxstyrAngle * horizontalInput;
             framH_hjulCollide.steerAngle = styrAngle;
@@ -71,7 +72,7 @@ namespace bil
 
         }
         // Två unktioner som tillsammans tillåter hjulen att snurra, den roterar alltså bara hjulen när en knapp är nedtryckt men funktionen som tar knapp inputs är högre upp
-        void Updatehjul()
+        private void Updatehjul()
         {
             Updateallahjul(framH_hjulCollide, framH_hjulTransform);
             Updateallahjul(framV_hjulCollide, framV_hjulTransform);
@@ -81,7 +82,7 @@ namespace bil
         }
         // Quaternion är för rotation
         // out stänger av värderna på ett sätt då den inte är aktiv eller då när värdena inte ändras.
-        void Updateallahjul(WheelCollider hjulcollide, Transform hjultransform)
+        private void Updateallahjul(WheelCollider hjulcollide, Transform hjultransform)
         {
             Vector3 postion;
             Quaternion rotation;
