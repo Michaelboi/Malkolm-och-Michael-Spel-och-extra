@@ -7,8 +7,8 @@ using bil;
 
 public class spelare : MonoBehaviour
 {
-    spelare_spawns current_pos;
-    spelare_movement move;
+    //spelare_spawns current_pos;
+    //spelare_movement move;
     bil_mechanics bil_move;
 
     // Start is called before the first frame update
@@ -16,11 +16,11 @@ public class spelare : MonoBehaviour
     void Start()
     {
         // Här används GetComponent för att variabeln från klassen ska fungera
-        move = GetComponent<spelare_movement>();
-        current_pos = GetComponent<spelare_spawns>();
+        //move = GetComponent<spelare_movement>();
+        //current_pos = GetComponent<spelare_spawns>();
         bil_move = GetComponent<bil_mechanics>();
-        current_pos.position();
-        move.kub_movement();
+        //current_pos.position();
+        //move.kub_movement();
 
 
     }
@@ -28,7 +28,7 @@ public class spelare : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move.movement();
+        //move.movement();
         
     }
     void FixedUpdate()
