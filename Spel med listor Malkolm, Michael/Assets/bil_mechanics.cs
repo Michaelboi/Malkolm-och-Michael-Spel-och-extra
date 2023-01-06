@@ -11,27 +11,26 @@ namespace bil
         
         // olika variabler som används för att brommsa, sätta värde för hur mycket kraft den brommsas med och styrningen.
         
-        public float horizontalInput;
-        public float verticalInput;
+        public float Styrinput;
+        public float gasinput;
         public bool BilBromms;
         public float current_brommsKraft;
         public float styrAngle;
 
         // V = vänster H = höger
-        // SerializeField behövs för att referera alla dessa variabler
-        [SerializeField] public WheelCollider framV_hjulCollide;
-        [SerializeField] public WheelCollider framH_hjulCollide;
-        [SerializeField] public WheelCollider bakV_hjulCollide;
-        [SerializeField] public WheelCollider bakH_hjulCollide;
+        public WheelCollider framV_hjulCollide;
+        public WheelCollider framH_hjulCollide;
+        public WheelCollider bakV_hjulCollide;
+        public WheelCollider bakH_hjulCollide;
 
-        [SerializeField] public Transform framV_hjulTransform;
-        [SerializeField] public Transform framH_hjulTransform;
-        [SerializeField] public Transform bakV_hjulTransform;
-        [SerializeField] public Transform bakH_hjulTransform;
+        public Transform framV_hjulTransform;
+        public Transform framH_hjulTransform;
+        public Transform bakV_hjulTransform;
+        public Transform bakH_hjulTransform;
 
-        [SerializeField] public float hjul_Kraft;
-        [SerializeField] public float bromms_Kraft;
-        [SerializeField] public float maxstyrAngle;
+        public float motor_kraft;
+        public float bromms_Kraft;
+        public float maxstyrAngle;
         
 
 
@@ -39,9 +38,9 @@ namespace bil
         public void bil_movement()
         {
             
-            horizontalInput = Input.GetAxis("Horizontal");
-            verticalInput = Input.GetAxis("Vertical");
-            BilBromms = Input.GetKey(KeyCode.LeftShift);
+            Styrinput = Input.GetAxis("Horizontal");
+            gasinput = Input.GetAxis("Vertical");
+            BilBromms = Input.GetKeyDown(KeyCode.LeftShift);
             Bil_motor();
             bil_styrhjul();
             Updatehjul();
@@ -50,13 +49,14 @@ namespace bil
         // används för att ta bilens hjul ska kunna köra. Den sätter också vissa specifika hjul som primära som då kör/rullar.
         private void Bil_motor()
         {
-            framH_hjulCollide.motorTorque = verticalInput * hjul_Kraft;
-            framV_hjulCollide.motorTorque = verticalInput * hjul_Kraft;
+            framH_hjulCollide.motorTorque = gasinput * motor_kraft;
+            framV_hjulCollide.motorTorque = gasinput * motor_kraft;
             current_brommsKraft = BilBromms ? bromms_Kraft : 0f;
             if (BilBromms == true)
             {
                 LäggBromms();
             }
+            
         }
         // sätter igång brommsen och saktar ner bilen genom att få hjulen att stanna
         private void LäggBromms()
@@ -65,11 +65,12 @@ namespace bil
             framV_hjulCollide.brakeTorque = current_brommsKraft;
             bakH_hjulCollide.brakeTorque = current_brommsKraft;
             bakV_hjulCollide.brakeTorque = current_brommsKraft;
+            
         }
         // Används för att styra bilen samt sätta en gräns för hur mycket den kan styra åt höger och vänster
         private void bil_styrhjul()
         {
-            styrAngle = maxstyrAngle * horizontalInput;
+            styrAngle = maxstyrAngle * Styrinput;
             framH_hjulCollide.steerAngle = styrAngle;
             framV_hjulCollide.steerAngle = styrAngle;
 

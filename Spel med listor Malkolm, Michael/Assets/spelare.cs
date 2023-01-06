@@ -7,7 +7,7 @@ using bil;
 
 public class spelare : MonoBehaviour
 {
-    //spelare_spawns current_pos;
+    spelare_spawns current_pos;
     //spelare_movement move;
     bil_mechanics bil_move;
 
@@ -15,9 +15,9 @@ public class spelare : MonoBehaviour
     
     void Start()
     {
-        // Här används GetComponent för att variabeln från klassen ska fungera
+        // Här används GetComponent för att variabeln från klassen ska fungera, dvs att den tar information från den klassen
         //move = GetComponent<spelare_movement>();
-        //current_pos = GetComponent<spelare_spawns>();
+        current_pos = GetComponent<spelare_spawns>();
         bil_move = GetComponent<bil_mechanics>();
         //current_pos.position();
         //move.kub_movement();
@@ -29,10 +29,10 @@ public class spelare : MonoBehaviour
     void Update()
     {
         //move.movement();
-        
+        bil_move.bil_movement();
     }
     void FixedUpdate()
     {
-        bil_move.bil_movement();
+        
     }
 }
