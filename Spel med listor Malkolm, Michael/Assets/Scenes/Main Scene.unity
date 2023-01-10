@@ -215,7 +215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1019267018
 GameObject:
@@ -293,7 +293,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1284763644
 GameObject:
@@ -332,12 +332,12 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
+  m_projectionMatrixMode: 2
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
+  m_FOVAxisMode: 1
+  m_SensorSize: {x: 21, y: 15.2}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 10.5
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -346,7 +346,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 71.794754
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -371,14 +371,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284763644}
-  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 3, z: -15}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: 3, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+  m_Father: {fileID: 2792218741000953572}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!4 &28636838689836129
 Transform:
   m_ObjectHideFlags: 0
@@ -518,9 +518,9 @@ WheelCollider:
   m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.37
   m_SuspensionSpring:
-    spring: 6000
-    damper: 6000
-    targetPosition: 0.5
+    spring: 3000
+    damper: 5000
+    targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
@@ -698,9 +698,9 @@ WheelCollider:
   m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.37
   m_SuspensionSpring:
-    spring: 6000
-    damper: 6000
-    targetPosition: 0.5
+    spring: 3000
+    damper: 5000
+    targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
@@ -742,17 +742,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3311311801856853086}
-  m_LocalRotation: {x: -0, y: -0.029670885, z: -0, w: 0.9995597}
-  m_LocalPosition: {x: 1, y: 1.2480758, z: -6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1792549861542736693}
   - {fileID: 7096574666183835443}
   - {fileID: 7781842844967072000}
+  - {fileID: 1284763647}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -3.401, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3018720587586133351
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,9 +783,9 @@ WheelCollider:
   m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.37
   m_SuspensionSpring:
-    spring: 6000
-    damper: 6000
-    targetPosition: 0.5
+    spring: 3000
+    damper: 5000
+    targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
@@ -849,7 +850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3401601259533327397, guid: dee4b20826da2bf41bd3854c0e880317, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3401601259533327397, guid: dee4b20826da2bf41bd3854c0e880317, type: 3}
       propertyPath: m_LocalScale.x
@@ -1015,9 +1016,9 @@ WheelCollider:
   m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.37
   m_SuspensionSpring:
-    spring: 6000
-    damper: 6000
-    targetPosition: 0.5
+    spring: 3000
+    damper: 5000
+    targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
@@ -1247,7 +1248,7 @@ MonoBehaviour:
   Styrinput: 0
   gasinput: 0
   BilBromms: 0
-  current_brommsKraft: 0
+  bromms_kraft: 0
   styrAngle: 0
   framV_hjulCollide: {fileID: 2716459195109496394}
   framH_hjulCollide: {fileID: 4795950752841417901}
@@ -1257,9 +1258,9 @@ MonoBehaviour:
   framH_hjulTransform: {fileID: 948405438855670366}
   bakV_hjulTransform: {fileID: 9188640841415222082}
   bakH_hjulTransform: {fileID: 28636838689836129}
-  motor_kraft: 1000
-  bromms_Kraft: 3000
-  maxstyrAngle: 40
+  motor_kraft: 4000
+  bromms_Kraft: 10000
+  maxstyrAngle: 45
 --- !u!114 &7970980000563765534
 MonoBehaviour:
   m_ObjectHideFlags: 0

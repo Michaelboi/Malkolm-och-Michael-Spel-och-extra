@@ -19,7 +19,7 @@ public class spelare : MonoBehaviour
         //move = GetComponent<spelare_movement>();
         current_pos = GetComponent<spelare_spawns>();
         bil_move = GetComponent<bil_mechanics>();
-        //current_pos.position();
+        current_pos.position();
         //move.kub_movement();
 
 
@@ -33,6 +33,6 @@ public class spelare : MonoBehaviour
     }
     void FixedUpdate()
     {
-        
+        bil_move.Bromms();
     }
 }

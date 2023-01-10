@@ -14,7 +14,7 @@ namespace bil
         public float Styrinput;
         public float gasinput;
         public bool BilBromms;
-        public float current_brommsKraft;
+        public float bromms_kraft;
         public float styrAngle;
 
         // V = vänster H = höger
@@ -37,38 +37,53 @@ namespace bil
         // funktion som tar inputs från spelaren, här kan man också ändra vilken knapp som gör vad
         public void bil_movement()
         {
-            
+            // Horizontal och Vertical är mellan värderna -1 och 1.
             Styrinput = Input.GetAxis("Horizontal");
             gasinput = Input.GetAxis("Vertical");
-            BilBromms = Input.GetKeyDown(KeyCode.LeftShift);
             Bil_motor();
             bil_styrhjul();
             Updatehjul();
 
         }
-        // används för att ta bilens hjul ska kunna köra. Den sätter också vissa specifika hjul som primära som då kör/rullar.
-        private void Bil_motor()
+        // motorTorque/brakeTorque är en inbyggd funktion som helt enkelt tillåter hjulen att rulla och brommsa.
+        // Här la jag in mina inputs och värden. Den sätter också vissa specifika hjul som primära som då kör/rullar.
+        public void Bil_motor()
         {
             framH_hjulCollide.motorTorque = gasinput * motor_kraft;
             framV_hjulCollide.motorTorque = gasinput * motor_kraft;
-            current_brommsKraft = BilBromms ? bromms_Kraft : 0f;
+            
+            
+        }
+        public void Bromms()
+        {
+            // sätter igång brommsen och saktar ner bilen genom att få hjulen att stanna
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                BilBromms = true;
+            }
+            else
+            {
+                BilBromms = false;
+            }
+
             if (BilBromms == true)
             {
-                LäggBromms();
+                framH_hjulCollide.brakeTorque = bromms_Kraft;
+                framV_hjulCollide.brakeTorque = bromms_Kraft;
+                bakH_hjulCollide.brakeTorque = bromms_Kraft;
+                bakV_hjulCollide.brakeTorque = bromms_Kraft;
             }
-            
+            else
+            {
+                framH_hjulCollide.brakeTorque = 0;
+                framV_hjulCollide.brakeTorque = 0;
+                bakH_hjulCollide.brakeTorque = 0;
+                bakV_hjulCollide.brakeTorque = 0;
+            }
         }
-        // sätter igång brommsen och saktar ner bilen genom att få hjulen att stanna
-        private void LäggBromms()
-        {
-            framH_hjulCollide.brakeTorque = current_brommsKraft;
-            framV_hjulCollide.brakeTorque = current_brommsKraft;
-            bakH_hjulCollide.brakeTorque = current_brommsKraft;
-            bakV_hjulCollide.brakeTorque = current_brommsKraft;
-            
-        }
+        
         // Används för att styra bilen samt sätta en gräns för hur mycket den kan styra åt höger och vänster
-        private void bil_styrhjul()
+        public void bil_styrhjul()
         {
             styrAngle = maxstyrAngle * Styrinput;
             framH_hjulCollide.steerAngle = styrAngle;
@@ -76,7 +91,7 @@ namespace bil
 
         }
         // Två unktioner som tillsammans tillåter hjulen att snurra, den roterar alltså bara hjulen när en knapp är nedtryckt men funktionen som tar knapp inputs är högre upp
-        private void Updatehjul()
+        public void Updatehjul()
         {
             Update_Allahjul(framH_hjulCollide, framH_hjulTransform);
             Update_Allahjul(framV_hjulCollide, framV_hjulTransform);
@@ -86,7 +101,7 @@ namespace bil
         }
         // Quaternion är för rotation
         // out stänger av värderna på ett sätt då den inte är aktiv eller då när värdena inte ändras.
-        private void Update_Allahjul(WheelCollider hjulcollide, Transform hjultransform)
+        public void Update_Allahjul(WheelCollider hjulcollide, Transform hjultransform)
         {
             Vector3 postion;
             Quaternion rotation;
