@@ -1258,8 +1258,8 @@ MonoBehaviour:
   framH_hjulTransform: {fileID: 948405438855670366}
   bakV_hjulTransform: {fileID: 9188640841415222082}
   bakH_hjulTransform: {fileID: 28636838689836129}
-  motor_kraft: 4000
-  bromms_Kraft: 10000
+  motor_kraft: 1000000
+  bromms_Kraft: 1e+16
   maxstyrAngle: 45
 --- !u!114 &7970980000563765534
 MonoBehaviour:
