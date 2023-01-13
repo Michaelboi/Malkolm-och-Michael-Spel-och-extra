@@ -7,7 +7,6 @@ using bil;
 
 public class spelare : MonoBehaviour
 {
-    Camera_Settings Camera;
     spelare_spawns current_pos;
     //spelare_movement move;
     bil_mechanics bil_move;
@@ -26,7 +25,6 @@ public class spelare : MonoBehaviour
         Camera_switch = GetComponent<Camera_Perspective>();
         current_pos = GetComponent<spelare_spawns>();
         bil_move = GetComponent<bil_mechanics>();
-        Camera = GetComponent<Camera_Settings>();
         current_pos.position();
         Camera_switch.Fixed_Perspective();
         //move.kub_movement();
@@ -45,11 +43,8 @@ public class spelare : MonoBehaviour
     void FixedUpdate()
     {
         bil_move.Bromms();
+        
 
     }
-    void LateUpdate()
-    {
-        Camera.Main_Camera();
-
-    }
+    
 }

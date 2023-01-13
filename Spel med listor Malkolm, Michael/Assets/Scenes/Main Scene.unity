@@ -390,7 +390,6 @@ GameObject:
   - component: {fileID: 1284763647}
   - component: {fileID: 1284763646}
   - component: {fileID: 1284763649}
-  - component: {fileID: 1284763648}
   - component: {fileID: 1284763645}
   m_Layer: 0
   m_Name: Main Camera
@@ -465,18 +464,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
---- !u!114 &1284763648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284763644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78993c103472e8a4aa159f722d50e703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1284763649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,11 +476,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e5625a20ae44d43b4d1076bae2d4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bil: {fileID: 2792218741000953572}
-  offset: {x: 0, y: 2, z: -9}
-  smoothtransitionSpeed: 2
+  offset: {x: 0, y: 1.8, z: -6}
+  smoothtransitionSpeed: 10
   target: {fileID: 2792218741000953572}
-  camrotateSpeed: 1
+  rotateoffset: {x: 0, y: 1.7, z: 0}
+  camrotateSpeed: 5
 --- !u!4 &28636838689836129
 Transform:
   m_ObjectHideFlags: 0
@@ -948,7 +935,6 @@ GameObject:
   - component: {fileID: 5324477570320754307}
   - component: {fileID: 7970980000563765533}
   - component: {fileID: 7970980000563765534}
-  - component: {fileID: 7970980000563765536}
   - component: {fileID: 7970980000563765535}
   - component: {fileID: 1151110208568590564}
   m_Layer: 0
@@ -1406,23 +1392,6 @@ MonoBehaviour:
   - {fileID: 1284763646}
   - {fileID: 921926783}
   current_camera: 0
---- !u!114 &7970980000563765536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3311311801856853086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e5625a20ae44d43b4d1076bae2d4f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bil: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  smoothtransitionSpeed: 1
-  target: {fileID: 2792218741000953572}
-  camrotateSpeed: 2
 --- !u!23 &8083670537762318055
 MeshRenderer:
   m_ObjectHideFlags: 0
