@@ -91,17 +91,18 @@ namespace bil
 
         }
         // Två unktioner som tillsammans tillåter hjulen att snurra, den roterar alltså bara hjulen när en knapp är nedtryckt men funktionen som tar knapp inputs är högre upp
+        // För att förtydliga, Update funktion gör tar hjulen och stänger av värderna när de inte används med (out).
         public void Updatehjul()
         {
-            Update_Allahjul(framH_hjulCollide, framH_hjulTransform);
-            Update_Allahjul(framV_hjulCollide, framV_hjulTransform);
-            Update_Allahjul(bakH_hjulCollide, bakH_hjulTransform);
-            Update_Allahjul(bakV_hjulCollide, bakV_hjulTransform);
+            Update_Alla_hjul(framH_hjulCollide, framH_hjulTransform);
+            Update_Alla_hjul(framV_hjulCollide, framV_hjulTransform);
+            Update_Alla_hjul(bakH_hjulCollide, bakH_hjulTransform);
+            Update_Alla_hjul(bakV_hjulCollide, bakV_hjulTransform);
 
         }
         // Quaternion är för rotation
         // out stänger av värderna på ett sätt då den inte är aktiv eller då när värdena inte ändras.
-        public void Update_Allahjul(WheelCollider hjulcollide, Transform hjultransform)
+        private void Update_Alla_hjul(WheelCollider hjulcollide, Transform hjultransform)
         {
             Vector3 postion;
             Quaternion rotation;
