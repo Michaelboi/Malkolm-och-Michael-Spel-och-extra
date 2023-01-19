@@ -11,12 +11,16 @@ public class spelare : MonoBehaviour
     //spelare_movement move;
     bil_mechanics bil_move;
     Camera_Perspective Camera_switch;
+    public Rigidbody bilrigidbody;
 
-    
-    
+
+
 
     // Start is called before the first frame update
-    
+    void Awake()
+    {
+        bilrigidbody = GetComponent<Rigidbody>();
+    }
     void Start()
     {
         

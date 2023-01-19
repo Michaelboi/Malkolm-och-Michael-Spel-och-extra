@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour
+public class Checkpointsingle : MonoBehaviour
 {
+
     int Checkpointscore = 0;
     int maxScore = 3;
     public void VidKollision(Collider kollision)
-    {
+    { 
         if (kollision.TryGetComponent<spelare>(out spelare bil))
         {
             Checkpointscore += 1;
