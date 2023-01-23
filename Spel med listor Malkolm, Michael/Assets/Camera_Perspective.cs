@@ -6,9 +6,10 @@ using UnityEngine.VFX;
 
 public class Camera_Perspective : MonoBehaviour
 {
+    
     public Camera[] cam_perspective;
     
-    public int current_camera;
+    int current_camera;
     
     // Funktionen stänger av alla kameror i en array och sätter igång den första som är primär.
     public void Fixed_Perspective()

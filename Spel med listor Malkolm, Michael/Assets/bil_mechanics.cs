@@ -11,26 +11,25 @@ namespace bil
         
         // olika variabler som används för att brommsa, sätta värde för hur mycket kraft den brommsas med och styrningen.
         
-        public float Styrinput;
-        public float gasinput;
-        public bool BilBromms;
-        public float bromms_kraft;
-        public float styrAngle;
+        float Styrinput;
+        float gasinput;
+        bool BilBromms;
+        float styrAngle;
 
         // V = vänster H = höger
-        public WheelCollider framV_hjulCollide;
-        public WheelCollider framH_hjulCollide;
-        public WheelCollider bakV_hjulCollide;
-        public WheelCollider bakH_hjulCollide;
+        WheelCollider framV_hjulCollide;
+        WheelCollider framH_hjulCollide;
+        WheelCollider bakV_hjulCollide;
+        WheelCollider bakH_hjulCollide;
 
-        public Transform framV_hjulTransform;
-        public Transform framH_hjulTransform;
-        public Transform bakV_hjulTransform;
-        public Transform bakH_hjulTransform;
+        Transform framV_hjulTransform;
+        Transform framH_hjulTransform;
+        Transform bakV_hjulTransform;
+        Transform bakH_hjulTransform;
 
-        public float motor_kraft;
-        public float bromms_Kraft;
-        public float maxstyrAngle;
+        float motor_kraft;
+        float bromms_Kraft;
+        float maxstyrAngle;
         
 
 

@@ -17,10 +17,7 @@ public class PlayerCheckpoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.position.y < -20f)
-        {
-            gameObject.transform.position = spawnPoint;
-        } 
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +26,8 @@ public class PlayerCheckpoint : MonoBehaviour
         if (other.gameObject.CompareTag("Checkpoint"))
         {
             spawnPoint = Flag.transform.position;
+
+            //gameObject.SetActive(false);
             
         }
     }
