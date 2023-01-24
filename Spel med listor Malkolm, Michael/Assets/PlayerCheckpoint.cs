@@ -5,29 +5,19 @@ using UnityEngine;
 public class PlayerCheckpoint : MonoBehaviour
 {
 
-    public GameObject Flag;
-    Vector3 spawnPoint;
+    public GameObject[] Checkpoint;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        spawnPoint = gameObject.transform.position; 
-    }
-
+    
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider Kollision)
     {
-        
-        if (other.gameObject.CompareTag("Checkpoint"))
+
+        if (Kollision.gameObject.CompareTag("Checkpoint"))
         {
-            spawnPoint = Flag.transform.position;
-
-            //gameObject.SetActive(false);
+            Debug.Log("Checkpoint!");
+            Checkpoint[0].gameObject.SetActive(false);
+            
             
         }
     }
