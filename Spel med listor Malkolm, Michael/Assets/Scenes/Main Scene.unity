@@ -587,6 +587,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e5625a20ae44d43b4d1076bae2d4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 0, y: 2, z: -6}
+  smoothtransitionSpeed: 7
+  target: {fileID: 2792218741000953572}
+  rotateoffset: {x: 0, y: 1, z: 0}
+  camrotateSpeed: 7
 --- !u!4 &28636838689836129
 Transform:
   m_ObjectHideFlags: 0
@@ -1192,7 +1197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78993c103472e8a4aa159f722d50e703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bilrigidbody: {fileID: 0}
+  bilrigidbody: {fileID: 7495443280552591180}
 --- !u!1 &5867909466005409230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1395,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476426aae9bfae2428d6ace4cf8a1070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Styrinput: 0
+  gasinput: 0
+  BilBromms: 0
+  styrAngle: 0
+  framV_hjulCollide: {fileID: 2716459195109496394}
+  framH_hjulCollide: {fileID: 4795950752841417901}
+  bakV_hjulCollide: {fileID: 3145262461155943224}
+  bakH_hjulCollide: {fileID: 1057494948402934815}
+  framV_hjulTransform: {fileID: 3794951909766237294}
+  framH_hjulTransform: {fileID: 948405438855670366}
+  bakV_hjulTransform: {fileID: 9188640841415222082}
+  bakH_hjulTransform: {fileID: 28636838689836129}
+  motor_kraft: 400
+  bromms_Kraft: 100000
+  maxstyrAngle: 45
 --- !u!114 &7970980000563765534
 MonoBehaviour:
   m_ObjectHideFlags: 0

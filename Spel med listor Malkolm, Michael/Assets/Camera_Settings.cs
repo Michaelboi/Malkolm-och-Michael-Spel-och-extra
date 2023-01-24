@@ -10,11 +10,11 @@ public class Camera_Settings : MonoBehaviour
         Main_Camera();
     }
     // De här variablerna sätter kamerans avstånd från bilen och hur snabbt kameran följer efter den.
-    Vector3 offset;
-    float smoothtransitionSpeed;
-    Transform target;
-    Vector3 rotateoffset;
-    float camrotateSpeed;
+    public Vector3 offset;
+    public float smoothtransitionSpeed;
+    public Transform target;
+    public Vector3 rotateoffset;
+    public float camrotateSpeed;
 
     // Jag har använt några inbyggda funktioner som används för att förflytta kameran och följa bilen.
     public void Main_Camera()
