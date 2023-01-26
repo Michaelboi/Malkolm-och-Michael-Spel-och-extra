@@ -1,23 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCheckpoint : MonoBehaviour
 {
+    public GameObject mållinje;
+    public GameObject[] Checkpoint = new GameObject[3];
+    public int collectedpoints = 0;
+    void Update()
+    {
+        if (collectedpoints == 3)
+        {
+            mållinje.SetActive(true);
+        }
 
-    public GameObject[] Checkpoint;
-
-    
-    // Update is called once per frame
-
+    }
     public void OnTriggerEnter(Collider Kollision)
     {
 
         if (Kollision.gameObject.CompareTag("Checkpoint"))
         {
             Debug.Log("Checkpoint!");
-            Checkpoint[0].gameObject.SetActive(false);
-            
+            Kollision.gameObject.SetActive(false);
+            this.collectedpoints += 1;
+            Debug.Log(collectedpoints);
             
         }
     }
