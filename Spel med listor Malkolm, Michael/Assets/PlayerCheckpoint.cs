@@ -15,16 +15,27 @@ public class PlayerCheckpoint : MonoBehaviour
             mållinje.SetActive(true);
         }
 
+
     }
     public void OnTriggerEnter(Collider Kollision)
     {
+        if (Kollision.gameObject.CompareTag("mål"))
+        {
+            mållinje.SetActive(false);
+            for (int i = 0; i < Checkpoint.Length; i++)
+            {
+                Checkpoint[i].gameObject.SetActive(true);
+
+            }
+            collectedpoints = 0;
+        }
 
         if (Kollision.gameObject.CompareTag("Checkpoint"))
         {
-            Debug.Log("Checkpoint!");
-            Kollision.gameObject.SetActive(false);
             this.collectedpoints += 1;
-            Debug.Log(collectedpoints);
+            Debug.Log("Checkpoint! " + collectedpoints + "/3");
+            Kollision.gameObject.SetActive(false);
+            
             
         }
     }
