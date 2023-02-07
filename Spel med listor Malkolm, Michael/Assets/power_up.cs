@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class power_up : MonoBehaviour
 {
+    public float duration = 3f;
     void Start()
     {
         //StartCoroutine(ShowAndHide());
@@ -34,14 +35,10 @@ public class power_up : MonoBehaviour
     public void Pickup()
     {
         Debug.Log("puss");
-        //ShowAndHide();
-        //ska skaffa parkiklar som kommer när man åker igenom powerupen
+
         // Ge en effekt till spelaren
+        // Ge effekten under en viss tid sedan återgå till normal
+        //yield return new WaitForSeconds(duration);
     }
-    ///public IEnumerator snopp()
-    //{
-    //gameObject.SetActive(false);
-    //yield return new WaitForSeconds(3);
-    //gameObject.SetActive(true)\\\
-    //}
+   
 }
