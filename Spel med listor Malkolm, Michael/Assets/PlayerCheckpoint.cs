@@ -6,11 +6,12 @@ using UnityEngine;
 public class PlayerCheckpoint : MonoBehaviour
 {
     public GameObject mållinje;
-    public GameObject[] Checkpoint = new GameObject[3];
+    public GameObject[] Checkpoints = new GameObject[8];
+    
     public int collectedpoints = 0;
     void Update()
     {
-        if (collectedpoints == 3)
+        if (collectedpoints == 8)
         {
             mållinje.SetActive(true);
         }
@@ -22,18 +23,17 @@ public class PlayerCheckpoint : MonoBehaviour
         if (Kollision.gameObject.CompareTag("mål"))
         {
             mållinje.SetActive(false);
-            for (int i = 0; i < Checkpoint.Length; i++)
-            {
-                Checkpoint[i].gameObject.SetActive(true);
-
-            }
             collectedpoints = 0;
+            for (int i = 0; i < Checkpoints.Length; i++)
+            {
+                Checkpoints[i].SetActive(true);
+            }
         }
 
         if (Kollision.gameObject.CompareTag("Checkpoint"))
         {
             this.collectedpoints += 1;
-            Debug.Log("Checkpoint! " + collectedpoints + "/3");
+            Debug.Log("Checkpoint! " + collectedpoints + "/8");
             Kollision.gameObject.SetActive(false);
             
             

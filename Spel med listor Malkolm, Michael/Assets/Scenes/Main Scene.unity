@@ -9809,11 +9809,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0902d671641ef498fec99cbc076623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "m\xE5llinje": {fileID: 0}
-  Checkpoint:
+  "m\xE5llinje": {fileID: 1873735665}
+  Checkpoints:
   - {fileID: 813204252}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1690415053}
+  - {fileID: 962512627}
+  - {fileID: 1743132737}
+  - {fileID: 765773836}
+  - {fileID: 1726440633}
+  - {fileID: 1908794490}
+  - {fileID: 1709567412}
   collectedpoints: 0
 --- !u!23 &8083670537762318055
 MeshRenderer:
