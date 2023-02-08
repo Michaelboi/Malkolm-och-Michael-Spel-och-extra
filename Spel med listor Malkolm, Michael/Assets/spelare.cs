@@ -44,8 +44,7 @@ public class spelare : MonoBehaviour
         bil_move.bil_movement();
         if (gameObject.transform.rotation == Quaternion.Euler(0, 0, 180) || gameObject.transform.rotation == Quaternion.Euler(0, 0, -180))
         {
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0
-                );
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         
     }
