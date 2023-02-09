@@ -7,6 +7,7 @@ public class PlayerCheckpoint : MonoBehaviour
 {
     public GameObject mållinje;
     public GameObject[] Checkpoints = new GameObject[8];
+    public GameObject Bilreset;
     
     public int collectedpoints = 0;
     void Update()
@@ -15,8 +16,16 @@ public class PlayerCheckpoint : MonoBehaviour
         {
             mållinje.SetActive(true);
         }
+        Checkpoints_Spawn();
 
-
+    }
+    public void Checkpoints_Spawn()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            Bilreset.transform.position = Checkpoints[collectedpoints - 1].transform.position;
+            Bilreset.transform.rotation = Checkpoints[collectedpoints - 1].transform.rotation;
+        }
     }
     public void OnTriggerEnter(Collider Kollision)
     {

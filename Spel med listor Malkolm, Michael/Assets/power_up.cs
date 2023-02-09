@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using UnityEditor.Search;
 using UnityEngine;
 
+
 public class power_up : MonoBehaviour
 {
+
+    public Rigidbody bilBody;
     public float duration = 3f;
     void Start()
     {
@@ -35,7 +38,8 @@ public class power_up : MonoBehaviour
     public void Pickup()
     {
         Debug.Log("puss");
-
+        bilBody.AddForce(transform.forward * 1000f, ForceMode.Acceleration);
+        
         // Ge en effekt till spelaren
         // Ge effekten under en viss tid sedan återgå till normal
         //yield return new WaitForSeconds(duration);
