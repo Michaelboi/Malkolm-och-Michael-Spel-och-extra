@@ -48,10 +48,12 @@ namespace bil
         // Här la jag in mina inputs och värden. Den sätter också vissa specifika hjul som primära som då kör/rullar.
         public void Bil_motor()
         {
+            bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
+            bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
             framH_hjulCollide.motorTorque = gasinput * motor_kraft;
             framV_hjulCollide.motorTorque = gasinput * motor_kraft;
-            
-            
+
+
         }
         public void Bromms()
         {
