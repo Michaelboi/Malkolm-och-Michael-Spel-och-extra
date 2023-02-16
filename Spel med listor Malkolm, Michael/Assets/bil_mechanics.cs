@@ -8,9 +8,9 @@ namespace bil
 {
     public class bil_mechanics : MonoBehaviour
     {
-        
+
         // olika variabler som används för att brommsa, sätta värde för hur mycket kraft den brommsas med och styrningen.
-        
+        public float maxTorque;
         public float Styrinput;
         public float gasinput;
         public bool BilBromms;
@@ -48,10 +48,18 @@ namespace bil
         // Här la jag in mina inputs och värden. Den sätter också vissa specifika hjul som primära som då kör/rullar.
         public void Bil_motor()
         {
-            bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
+            /*bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
             bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
             framH_hjulCollide.motorTorque = gasinput * motor_kraft;
-            framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+            framV_hjulCollide.motorTorque = gasinput * motor_kraft;*/
+
+            if (bakH_hjulCollide.motorTorque < maxTorque)
+            {
+                bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
+                bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
+                framH_hjulCollide.motorTorque = gasinput * motor_kraft;
+                framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+            }
 
 
         }

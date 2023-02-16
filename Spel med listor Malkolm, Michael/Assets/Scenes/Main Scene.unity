@@ -9726,24 +9726,24 @@ WheelCollider:
   m_Radius: 0.37
   m_SuspensionSpring:
     spring: 3000
-    damper: 10000
+    damper: 7000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
+    m_ExtremumSlip: 0.9
+    m_ExtremumValue: 2
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_ExtremumSlip: 0.9
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 2
+    m_Stiffness: 0.9
   m_Enabled: 1
 --- !u!65 &1151110208568590564
 BoxCollider:
@@ -9906,24 +9906,24 @@ WheelCollider:
   m_Radius: 0.37
   m_SuspensionSpring:
     spring: 3000
-    damper: 10000
+    damper: 7000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
+    m_ExtremumSlip: 0.9
+    m_ExtremumValue: 2
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_ExtremumSlip: 0.9
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 2
+    m_Stiffness: 0.9
   m_Enabled: 1
 --- !u!1 &2762295716280183547
 GameObject:
@@ -9991,24 +9991,24 @@ WheelCollider:
   m_Radius: 0.37
   m_SuspensionSpring:
     spring: 3000
-    damper: 10000
+    damper: 7000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
+    m_ExtremumSlip: 0.9
+    m_ExtremumValue: 2
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_ExtremumSlip: 0.9
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 2
+    m_Stiffness: 0.9
   m_Enabled: 1
 --- !u!1 &3220844046700545592
 GameObject:
@@ -10161,24 +10161,24 @@ WheelCollider:
   m_Radius: 0.37
   m_SuspensionSpring:
     spring: 3000
-    damper: 10000
+    damper: 7000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
+    m_ExtremumSlip: 0.9
+    m_ExtremumValue: 2
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_ExtremumSlip: 0.9
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 1
+    m_AsymptoteValue: 2
+    m_Stiffness: 0.9
   m_Enabled: 1
 --- !u!114 &5324477570320754307
 MonoBehaviour:
@@ -10390,6 +10390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476426aae9bfae2428d6ace4cf8a1070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTorque: 200
   Styrinput: 0
   gasinput: 0
   BilBromms: 0
@@ -10402,9 +10403,9 @@ MonoBehaviour:
   framH_hjulTransform: {fileID: 948405438855670366}
   bakV_hjulTransform: {fileID: 9188640841415222082}
   bakH_hjulTransform: {fileID: 28636838689836129}
-  motor_kraft: 500
+  motor_kraft: 1000
   bromms_Kraft: 100000
-  maxstyrAngle: 75
+  maxstyrAngle: 20
 --- !u!114 &7970980000563765534
 MonoBehaviour:
   m_ObjectHideFlags: 0
