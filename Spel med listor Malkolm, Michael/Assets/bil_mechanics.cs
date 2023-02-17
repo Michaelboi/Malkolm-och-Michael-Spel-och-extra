@@ -30,6 +30,8 @@ namespace bil
         public float motor_kraft;
         public float bromms_Kraft;
         public float maxstyrAngle;
+
+        public Rigidbody respawnvelocity;
         
 
 
@@ -53,12 +55,19 @@ namespace bil
             framH_hjulCollide.motorTorque = gasinput * motor_kraft;
             framV_hjulCollide.motorTorque = gasinput * motor_kraft;*/
 
-            if (bakH_hjulCollide.motorTorque < maxTorque)
+            if (bakH_hjulCollide.motorTorque < maxTorque && gasinput != 0)
             {
                 bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+            }
+            if (Input.GetKey(KeyCode.R))
+            {
+                framV_hjulCollide.motorTorque = 0;
+                framH_hjulCollide.motorTorque = 0;
+                bakH_hjulCollide.motorTorque = 0;
+                bakV_hjulCollide.motorTorque = 0;
             }
 
 
@@ -118,6 +127,12 @@ namespace bil
             hjulcollide.GetWorldPose(out postion, out rotation);
             hjultransform.rotation = rotation;
             hjultransform.position = postion;
+            if (Input.GetKey(KeyCode.R))
+            {
+                hjultransform.rotation = new Quaternion(0, 0, 0, 0);
+                respawnvelocity.velocity = new Vector3(0, 0, 0);
+
+            }
         }
     }
 

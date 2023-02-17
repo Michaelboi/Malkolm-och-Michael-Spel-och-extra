@@ -9726,7 +9726,7 @@ WheelCollider:
   m_Radius: 0.37
   m_SuspensionSpring:
     spring: 3000
-    damper: 7000
+    damper: 10000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -9906,7 +9906,7 @@ WheelCollider:
   m_Radius: 0.37
   m_SuspensionSpring:
     spring: 3000
-    damper: 7000
+    damper: 10000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -9991,7 +9991,7 @@ WheelCollider:
   m_Radius: 0.37
   m_SuspensionSpring:
     spring: 3000
-    damper: 7000
+    damper: 10000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -10161,7 +10161,7 @@ WheelCollider:
   m_Radius: 0.37
   m_SuspensionSpring:
     spring: 3000
-    damper: 7000
+    damper: 10000
     targetPosition: 1
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -10406,6 +10406,7 @@ MonoBehaviour:
   motor_kraft: 1000
   bromms_Kraft: 100000
   maxstyrAngle: 20
+  respawnvelocity: {fileID: 7495443280552591180}
 --- !u!114 &7970980000563765534
 MonoBehaviour:
   m_ObjectHideFlags: 0

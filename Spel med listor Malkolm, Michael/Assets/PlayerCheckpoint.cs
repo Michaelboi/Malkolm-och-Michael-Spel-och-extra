@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCheckpoint : bil_mechanics
+public class PlayerCheckpoint : MonoBehaviour
 {
     public GameObject mållinje;
     public GameObject[] Checkpoints = new GameObject[8];
@@ -30,10 +30,7 @@ public class PlayerCheckpoint : bil_mechanics
         {
             Bilreset.transform.position = Checkpoints[collectedpoints - 1].transform.position;
             Bilreset.transform.rotation = Checkpoints[collectedpoints - 1].transform.rotation;
-            framV_hjulCollide.motorTorque = 0;
-            framH_hjulCollide.motorTorque = 0;
-            bakH_hjulCollide.motorTorque = 0;
-            bakV_hjulCollide.motorTorque = 0;
+            
         }
     }
     public void OnTriggerEnter(Collider Kollision)
