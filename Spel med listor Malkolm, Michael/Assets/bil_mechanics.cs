@@ -44,18 +44,44 @@ namespace bil
             Bil_motor();
             bil_styrhjul();
             Updatehjul();
+            if (Input.GetKey(KeyCode.R))
+            {
+                respawnvelocity.velocity = new Vector3(0, 0, 0);
+            }
+            
 
         }
         // motorTorque/brakeTorque är en inbyggd funktion som helt enkelt tillåter hjulen att rulla och brommsa.
         // Här la jag in mina inputs och värden. Den sätter också vissa specifika hjul som primära som då kör/rullar.
         public void Bil_motor()
         {
-            /*bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
+            bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
             bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
             framH_hjulCollide.motorTorque = gasinput * motor_kraft;
-            framV_hjulCollide.motorTorque = gasinput * motor_kraft;*/
+            framV_hjulCollide.motorTorque = gasinput * motor_kraft;
 
-            if (bakH_hjulCollide.motorTorque < maxTorque && gasinput != 0)
+            /*if (bakH_hjulCollide.motorTorque < maxTorque)
+            {
+                bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
+                bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
+                framH_hjulCollide.motorTorque = gasinput * motor_kraft;
+                framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+            }
+            if (framV_hjulCollide.motorTorque < maxTorque)
+            {
+                bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
+                bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
+                framH_hjulCollide.motorTorque = gasinput * motor_kraft;
+                framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+            }
+            if (framH_hjulCollide.motorTorque < maxTorque)
+            {
+                bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
+                bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
+                framH_hjulCollide.motorTorque = gasinput * motor_kraft;
+                framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+            }
+            if (bakV_hjulCollide.motorTorque < maxTorque)
             {
                 bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
@@ -68,7 +94,7 @@ namespace bil
                 framH_hjulCollide.motorTorque = 0;
                 bakH_hjulCollide.motorTorque = 0;
                 bakV_hjulCollide.motorTorque = 0;
-            }
+            }*/
 
 
         }
@@ -127,12 +153,7 @@ namespace bil
             hjulcollide.GetWorldPose(out postion, out rotation);
             hjultransform.rotation = rotation;
             hjultransform.position = postion;
-            if (Input.GetKey(KeyCode.R))
-            {
-                hjultransform.rotation = new Quaternion(0, 0, 0, 0);
-                respawnvelocity.velocity = new Vector3(0, 0, 0);
-
-            }
+            
         }
     }
 

@@ -22,16 +22,17 @@ public class PlayerCheckpoint : MonoBehaviour
     }
     public void Checkpoints_Spawn()
     {
-        if (collectedpoints < 0)
-        {
-            collectedpoints = 0;
-        }
         if (Input.GetKey(KeyCode.R))
         {
             Bilreset.transform.position = Checkpoints[collectedpoints - 1].transform.position;
             Bilreset.transform.rotation = Checkpoints[collectedpoints - 1].transform.rotation;
-            
+
         }
+        if (collectedpoints < 0)
+        {
+            collectedpoints = 0;
+        }
+        
     }
     public void OnTriggerEnter(Collider Kollision)
     {

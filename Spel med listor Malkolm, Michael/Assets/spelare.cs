@@ -42,10 +42,7 @@ public class spelare : MonoBehaviour
         //move.movement();
         Camera_switch.Perspective_Change();
         bil_move.bil_movement();
-        if (gameObject.transform.rotation == Quaternion.Euler(0, 0, 180) || gameObject.transform.rotation == Quaternion.Euler(0, 0, -180))
-        {
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+        
         
     }
     void FixedUpdate()
