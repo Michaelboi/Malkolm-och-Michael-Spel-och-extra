@@ -10390,7 +10390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476426aae9bfae2428d6ace4cf8a1070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTorque: 200
+  maxTorque: 0
   Styrinput: 0
   gasinput: 0
   BilBromms: 0
@@ -10406,7 +10406,7 @@ MonoBehaviour:
   motor_kraft: 1000
   bromms_Kraft: 100000
   maxstyrAngle: 20
-  respawnvelocity: {fileID: 7495443280552591180}
+  respawnvelocity: {fileID: 0}
 --- !u!114 &7970980000563765534
 MonoBehaviour:
   m_ObjectHideFlags: 0

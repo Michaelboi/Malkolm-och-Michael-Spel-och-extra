@@ -60,7 +60,7 @@ namespace bil
             framH_hjulCollide.motorTorque = gasinput * motor_kraft;
             framV_hjulCollide.motorTorque = gasinput * motor_kraft;
 
-            /*if (bakH_hjulCollide.motorTorque < maxTorque)
+            if (bakH_hjulCollide.motorTorque < maxTorque)
             {
                 bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
@@ -94,7 +94,7 @@ namespace bil
                 framH_hjulCollide.motorTorque = 0;
                 bakH_hjulCollide.motorTorque = 0;
                 bakV_hjulCollide.motorTorque = 0;
-            }*/
+            }
 
 
         }
