@@ -48,7 +48,6 @@ public class spelare : MonoBehaviour
     void FixedUpdate()
     {
         bil_move.Bromms();
-        
 
     }
     

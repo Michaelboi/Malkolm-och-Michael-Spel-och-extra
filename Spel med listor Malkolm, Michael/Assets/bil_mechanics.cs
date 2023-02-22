@@ -10,6 +10,8 @@ namespace bil
     {
 
         // olika variabler som används för att brommsa, sätta värde för hur mycket kraft den brommsas med och styrningen.
+        public float maxSpeed;
+        public float speed;
         public float maxTorque;
         public float Styrinput;
         public float gasinput;
@@ -42,6 +44,7 @@ namespace bil
             Styrinput = Input.GetAxis("Horizontal");
             gasinput = Input.GetAxis("Vertical");
             Bil_motor();
+            Saktaner(10000);
             bil_styrhjul();
             Updatehjul();
             if (Input.GetKey(KeyCode.R))
@@ -51,42 +54,82 @@ namespace bil
             
 
         }
+        // Eftersom att maxhastighets lösningen har bugar så har vi en funktion som saktar ner den lite om man inte håller in kör knappen.
+        public void Saktaner(float bromms)
+        {
+            if (gasinput == 0)
+            {
+                BilBromms = true;
+                
+                
+            }
+
+            if (BilBromms == true)
+            {
+                framV_hjulCollide.motorTorque = 0;
+                framH_hjulCollide.motorTorque = 0;
+                bakH_hjulCollide.motorTorque = 0;
+                bakV_hjulCollide.motorTorque = 0;
+
+                framH_hjulCollide.brakeTorque = bromms;
+                framV_hjulCollide.brakeTorque = bromms;
+                bakH_hjulCollide.brakeTorque = bromms;
+                bakV_hjulCollide.brakeTorque = bromms;
+            }
+
+            else
+            {
+                BilBromms = false;
+            }
+
+        }
         // motorTorque/brakeTorque är en inbyggd funktion som helt enkelt tillåter hjulen att rulla och brommsa.
         // Här la jag in mina inputs och värden. Den sätter också vissa specifika hjul som primära som då kör/rullar.
+        // Vi har ändrat lite så man kan nu köra men att det finns en maxhastighet
         public void Bil_motor()
         {
-            bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
+            /*bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
             bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
             framH_hjulCollide.motorTorque = gasinput * motor_kraft;
-            framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+            framV_hjulCollide.motorTorque = gasinput * motor_kraft;*/
+
+            
 
             if (bakH_hjulCollide.motorTorque < maxTorque)
             {
+                
                 bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+                
             }
             if (framV_hjulCollide.motorTorque < maxTorque)
             {
+                
                 bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+                
             }
             if (framH_hjulCollide.motorTorque < maxTorque)
             {
+                
                 bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+                
             }
             if (bakV_hjulCollide.motorTorque < maxTorque)
             {
+                
                 bakH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 bakV_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framH_hjulCollide.motorTorque = gasinput * motor_kraft;
                 framV_hjulCollide.motorTorque = gasinput * motor_kraft;
+                
             }
             if (Input.GetKey(KeyCode.R))
             {
