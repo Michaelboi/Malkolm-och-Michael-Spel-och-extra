@@ -66,6 +66,7 @@ namespace bil
 
             if (BilBromms == true)
             {
+                respawnvelocity.drag = 0.5f;
                 framV_hjulCollide.motorTorque = 0;
                 framH_hjulCollide.motorTorque = 0;
                 bakH_hjulCollide.motorTorque = 0;
@@ -80,6 +81,7 @@ namespace bil
             else
             {
                 BilBromms = false;
+                respawnvelocity.drag = 0.1f;
             }
 
         }
