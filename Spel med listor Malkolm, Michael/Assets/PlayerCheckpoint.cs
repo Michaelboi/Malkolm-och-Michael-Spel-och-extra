@@ -4,15 +4,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerCheckpoint : MonoBehaviour
 {
+    
     public GameObject mållinje;
     public GameObject[] Checkpoints = new GameObject[8];
     public GameObject Bilreset;
-    
+    public float avrundadtid;
     public int collectedpoints = 0;
+    public float timer = 0f;
     void Update()
     {
+        timer += Time.deltaTime;
         if (collectedpoints == 8)
         {
             mållinje.SetActive(true);
@@ -39,6 +43,9 @@ public class PlayerCheckpoint : MonoBehaviour
         if (Kollision.gameObject.CompareTag("mål"))
         {
             mållinje.SetActive(false);
+            avrundadtid = (float)Math.Round(timer, 2);
+            Debug.Log(avrundadtid + "sekunder");
+            timer = 0f;
             collectedpoints = 0;
             for (int i = 0; i < Checkpoints.Length; i++)
             {

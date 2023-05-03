@@ -12,7 +12,7 @@ public class spelare : MonoBehaviour
     bil_mechanics bil_move;
     Camera_Perspective Camera_switch;
     public Rigidbody bilrigidbody;
-    public float timer = Time.timeSinceLevelLoad;
+    
     
 
 
@@ -45,9 +45,7 @@ public class spelare : MonoBehaviour
         //move.movement();
         Camera_switch.Perspective_Change();
         bil_move.bil_movement();
-        timer += Time.deltaTime;
-        
-        Debug.Log(timer);
+       
         
     }
     void FixedUpdate()
