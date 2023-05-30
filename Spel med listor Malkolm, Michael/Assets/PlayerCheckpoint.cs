@@ -1,7 +1,7 @@
 using bil;
+using System.IO;
+using OfficeOpenXml;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -14,6 +14,24 @@ public class PlayerCheckpoint : MonoBehaviour
     public float avrundadtid;
     public int collectedpoints = 0;
     public float timer = 0f;
+
+    public string filepath = "G:\\Min enhet\\tei21 Malkolm Nömm prog";
+
+
+    public void SaveTime()
+    {
+        using (var pack = new ExcelPackage())
+        {
+            var worksheet = pack.Workbook.Worksheets.Add("Sheet1");
+            worksheet.Cells["A1"].Value = avrundadtid;
+
+            pack.SaveAs(new FileInfo(filepath));
+        }
+      
+         
+        
+
+    }
     void Update()
     {
         timer += Time.deltaTime;
@@ -45,6 +63,7 @@ public class PlayerCheckpoint : MonoBehaviour
             mållinje.SetActive(false);
             avrundadtid = (float)Math.Round(timer, 2);
             Debug.Log(avrundadtid + "sekunder");
+            SaveTime();
             timer = 0f;
             collectedpoints = 0;
             for (int i = 0; i < Checkpoints.Length; i++)
