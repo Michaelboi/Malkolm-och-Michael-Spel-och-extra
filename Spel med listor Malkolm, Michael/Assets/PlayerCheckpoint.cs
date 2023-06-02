@@ -1,9 +1,7 @@
 using bil;
 using System.IO;
-using OfficeOpenXml;
 using System;
 using UnityEngine;
-
 
 public class PlayerCheckpoint : MonoBehaviour
 {
@@ -15,23 +13,25 @@ public class PlayerCheckpoint : MonoBehaviour
     public int collectedpoints = 0;
     public float timer = 0f;
 
-    public string filepath = "G:\\Min enhet\\tei21 Malkolm Nömm prog";
+    public string filepath = "savetime.xlsx";
 
 
     public void SaveTime()
     {
-        using (var pack = new ExcelPackage())
+        System.IO.File.WriteAllText(filepath, avrundadtid.ToString());
+
+
+
+        /*using (var pack = new ExcelPackage())
         {
             var worksheet = pack.Workbook.Worksheets.Add("Sheet1");
             worksheet.Cells["A1"].Value = avrundadtid;
 
             pack.SaveAs(new FileInfo(filepath));
-        }
-      
-         
-        
+        }*/
 
     }
+    // Om den når max antalet så aktiveras mållinje, den blir true.
     void Update()
     {
         timer += Time.deltaTime;
@@ -41,7 +41,10 @@ public class PlayerCheckpoint : MonoBehaviour
         }
         Checkpoints_Spawn();
 
+
     }
+    // Om man klickar på R så kan man respawna vid den senaste checkpointen man tog.
+    // Vi har också fixat så att Om man inte har tagit checkpoints och den blir mindre än 0 så hamnar man fortfarande där man börja.
     public void Checkpoints_Spawn()
     {
         if (Input.GetKey(KeyCode.R))
@@ -56,6 +59,11 @@ public class PlayerCheckpoint : MonoBehaviour
         }
         
     }
+    // Den här funktion gäller för alla som har Ontrigger knappen på.
+    // När man kolliderar med mållinjen så sparas en tid, antalet checkpoints man har tagit resetas.
+    // Alla checkpoints sätts true medans mållinje blir false.
+    // När man kolliderar med checkpoints blir de false så ökas antalet collectedcheckpoints som har ett max antal.
+    
     public void OnTriggerEnter(Collider Kollision)
     {
         if (Kollision.gameObject.CompareTag("mål"))

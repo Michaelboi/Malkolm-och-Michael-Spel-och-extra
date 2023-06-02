@@ -88,6 +88,7 @@ namespace bil
         // motorTorque/brakeTorque är en inbyggd funktion som helt enkelt tillåter hjulen att rulla och brommsa.
         // Här la jag in mina inputs och värden. Den sätter också vissa specifika hjul som primära som då kör/rullar.
         // Vi har ändrat lite så man kan nu köra men att det finns en maxhastighet
+        // Om man inte håller in gas knappen så saktar bilen ner med drag vilket fixade en liten bug som uppstod.
         public void Bil_motor()
         {
             /*bakH_hjulCollide.motorTorque = gasinput * motor_kraft;

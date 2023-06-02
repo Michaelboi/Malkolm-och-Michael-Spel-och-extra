@@ -5,6 +5,7 @@ using spawnpositions;
 using spel_move;
 using bil;
 
+
 public class spelare : MonoBehaviour
 {
     spelare_spawns current_pos;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Checkpointsingle : MonoBehaviour
 {
-
+    // används ej
     int Checkpointscore = 0;
     int maxScore = 3;
     public void VidKollision(Collider kollision)
